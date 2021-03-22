@@ -1,0 +1,16 @@
+<p>Filter Category</p>
+<input type="text" (keyup)="filterItem($event)">
+{{filterText}}
+<br>
+<br>
+
+<table class="category-table">
+  <tr>
+    <th>Category</th>
+  </tr>
+  <tr *ngFor="let c of objCategory | filterCategory :filterText ">
+    <td>
+      {{c}}
+    </td>
+  </tr>
+</table>

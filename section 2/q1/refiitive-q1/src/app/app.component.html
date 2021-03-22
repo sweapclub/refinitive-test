@@ -1,0 +1,18 @@
+<div class="box">
+  <div class="container">
+    <div class="left-panel">
+      <input type="number" min="0" [(ngModel)]="inputNumber" (keydown)="blockSymbol($event)">
+    </div>
+    <div class="center-panel">
+      <select name="func" id="func" [(ngModel)]="func">
+        <option value="prime">isPrime</option>
+        <option value="fibo">isFibonacci</option>
+      </select>
+    </div>
+    <div class="right-panel">
+      <span *ngIf="func == 'prime'; else fibo"> {{inputNumber | prime}}</span>
+      <ng-template #fibo> <span>{{inputNumber | fibonancci}}</span></ng-template>
+
+    </div>
+  </div>
+</div>
